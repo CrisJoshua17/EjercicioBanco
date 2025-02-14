@@ -14,52 +14,37 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-
-
 @Entity
-@Table(name = "promociones")
+@Table(name="ofertas")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Promocion implements Serializable {
+public class Oferta implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_promociones")
-    private Long idPromocion;
+    @Column(name = "id_ofertas")
+    private Long idOferta;
+
 
     @NotBlank
-    @Lob
-    @Column(name = "descripcion_promocion")
-    private String descripcionPromocion;
+    @ManyToOne
+    @JoinColumn(name = "id_tipo_ofertas", nullable = false)
+    private TipoOferta tipoOferta;
 
     @NotBlank
-    @Column(name = "valor_promocion")
-    private Double valorPromocion;
-
-    @NotBlank
-    @Lob
-    @Column(name = "condiciones_promocion")
-    private String condicionesPromocion;
+    @Column(name = "estado_oferta")
+    private Boolean estadoOferta;
 
     @NotNull
-    @Column(name = "fecha_inicio_promocion")
-    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_inicio_oferta")
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fechaInicio;
 
     @NotNull
-    @Column(name = "fecha_fin_promocion")
-    @Temporal(TemporalType.DATE)
+    @Column(name = "fecha_fin_oferta")
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fechaFin;
-
-    @NotBlank
-    @Column(name = "estado_promocion")
-    private Boolean estadoPromocion;
-
-
-
 }
