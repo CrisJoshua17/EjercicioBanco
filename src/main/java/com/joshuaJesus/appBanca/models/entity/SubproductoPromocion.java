@@ -20,7 +20,6 @@ public class SubproductoPromocion implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "id_subproductos", nullable = false)
-    @Column(name = "id_subproductos")
     private SubProducto subproducto;
 
     @Id

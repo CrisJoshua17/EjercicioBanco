@@ -27,7 +27,7 @@ public class SubProducto implements Serializable {
     @Column(name = "id_subproductos")
     private Long idSubproducto;
 
-    @NotBlank
+
     @ManyToOne
     @JoinColumn(name = "id_productos", nullable = false)
     private Producto producto;
@@ -42,7 +42,6 @@ public class SubProducto implements Serializable {
 
     @NotNull
     @Column(name = "fecha_creacion_subproducto")
-    @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fechaCreacionSubproducto;
@@ -55,7 +54,7 @@ public class SubProducto implements Serializable {
     @Column(name = "precio_subproducto")
     private Double precioSubproducto;
 
-    @NotBlank
+    @NotNull
     @Column(name = "estado_subproducto")
     private Boolean estadoSubproducto;
 

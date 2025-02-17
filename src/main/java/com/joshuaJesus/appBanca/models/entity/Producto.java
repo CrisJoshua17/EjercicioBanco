@@ -25,6 +25,7 @@ public class Producto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @Column(name="id_productos")
     private Long idProducto;
 
     @NotBlank
@@ -51,13 +52,12 @@ public class Producto implements Serializable {
 
     @NotNull
     @Column(name = "fecha_creacion_producto")
-    @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fechaCreacion;
 
 
-    @OneToMany(mappedBy = "productos", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SubProducto> subproductos;
 
 

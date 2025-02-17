@@ -33,7 +33,7 @@ public class Promocion implements Serializable {
     @Column(name = "descripcion_promocion")
     private String descripcionPromocion;
 
-    @NotBlank
+    @NotNull
     @Column(name = "valor_promocion")
     private Double valorPromocion;
 
@@ -44,19 +44,17 @@ public class Promocion implements Serializable {
 
     @NotNull
     @Column(name = "fecha_inicio_promocion")
-    @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fechaInicio;
 
     @NotNull
     @Column(name = "fecha_fin_promocion")
-    @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd-MM-yyyy")
     @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate fechaFin;
 
-    @NotBlank
+    @NotNull
     @Column(name = "estado_promocion")
     private Boolean estadoPromocion;
 

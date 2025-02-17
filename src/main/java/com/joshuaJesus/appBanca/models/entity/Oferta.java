@@ -32,7 +32,7 @@ public class Oferta implements Serializable {
     @JoinColumn(name = "id_tipo_ofertas", nullable = false)
     private TipoOferta tipoOferta;
 
-    @NotBlank
+    @NotNull
     @Column(name = "estado_oferta")
     private Boolean estadoOferta;
 
