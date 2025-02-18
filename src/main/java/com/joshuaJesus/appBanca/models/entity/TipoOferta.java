@@ -19,7 +19,8 @@ public class TipoOferta implements Serializable {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tipo_ofertas_seq")
+    @SequenceGenerator(name = "tipo_ofertas_seq", sequenceName = "TIPO_OFERTAS_SEQ", allocationSize = 1)
     @Column(name = "id_tipo_oferta")
     private Long id;
 
