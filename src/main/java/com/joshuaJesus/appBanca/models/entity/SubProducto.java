@@ -23,7 +23,7 @@ import java.time.LocalDate;
 public class SubProducto implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id_subproductos")
     private Long idSubproducto;
 

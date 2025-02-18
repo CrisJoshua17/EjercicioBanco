@@ -24,7 +24,7 @@ import java.time.LocalDate;
 public class Promocion implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id_promociones")
     private Long idPromocion;
 
