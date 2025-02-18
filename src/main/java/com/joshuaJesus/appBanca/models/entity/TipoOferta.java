@@ -26,7 +26,7 @@ public class TipoOferta implements Serializable {
 
     @NotBlank
     @Column(name = "tipo_oferta")
-    private String tipoOferta;
+    private String tipoOfertas;
 
     @NotBlank
     @Lob
